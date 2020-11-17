@@ -15,15 +15,19 @@ video: Chapter 2 - Part 3
  
  
  1) Write down the names of all of the primitives available in C++ (excluding wchar_t) here: 
+
+// Checking several sources, there are a couple of types who appear in some lists and not in others (e.g. short, size_t, long, all unsigned types). However, there is a consensus on some basic types, which are the following:
+
+ int
+ float
+ double
+ bool
+ char
+ void
  
- 
- 
- 
- 
- 
- 
- 
- 
+
+
+  
  
  
 2) for each primitive type, write out 3 variable declarations inside the variableDeclaration() function on line 59.
@@ -56,10 +60,44 @@ void variableDeclarations()
 {
     //example:
     int number = 2; //declaration of a primitive named 'number' with an initial value of '2'
+    int age = 89;
+    int count = 6;
     
+    float pi = 3.145f;
+    float width = 2.7f;
+    float speed = 122.2f;
+    
+    double e = 2.718281828;
+    double weightOfFruit = 0.68;
+    double SPL = -5.923;
 
+    bool hasAntennae = true;
+    bool isBlack = true;
+    bool isEmpty = false;
     
+    char firstLetter = 'A';
+    char grade = 'C';
+    char superHeroStartsWith = 'S';
+        
     ignoreUnused(number); //passing each variable declared to the ignoreUnused() function
+    ignoreUnused(age);
+    ignoreUnused(count);
+    
+    ignoreUnused(pi);
+    ignoreUnused(width);
+    ignoreUnused(speed);
+    
+    ignoreUnused(e);
+    ignoreUnused(weightOfFruit);
+    ignoreUnused(SPL);
+
+    ignoreUnused(hasAntennae);
+    ignoreUnused(isBlack);
+    ignoreUnused(isEmpty);
+
+    ignoreUnused(firstLetter);
+    ignoreUnused(grade);
+    ignoreUnused(superHeroStartsWith);
 }
 
 /*
@@ -75,42 +113,89 @@ bool rentACar(int rentalDuration, int carType = 0)  //function declaration with 
 /*
  1)
  */
+ int calculateSumOfThreeInts(int number1, int number2, int number3 = 0)
+ {
+     ignoreUnused(number1, number2, number3);
+     return {};
+ }
 
 /*
  2)
  */
+ void printCharacter(char charToPrint)
+ {
+     ignoreUnused(charToPrint);
+ }
 
 /*
  3)
  */
+ bool initAudioEngine(float sampleRateInkHz = 44.1f, int quantizationSteps = 16)
+ {
+     ignoreUnused(sampleRateInkHz, quantizationSteps);
+     return {};
+ }
 
 /*
  4)
  */
+ double returnArrayOfRandomNumbers(int sizeOfArray)
+ {
+     ignoreUnused(sizeOfArray);
+     return {};
+ }
 
 /*
  5)
  */
+ float returnSwissGradePointAverage(int studentID, int semester, char subject)
+ {
+     ignoreUnused(studentID, semester, subject);
+     return {};
+ }
 
 /*
  6)
  */
-
+double convertFahrenheitToCelsius(double degreesFarenheit)
+{
+    ignoreUnused(degreesFarenheit);
+    return {};
+}
 /*
  7)
  */
+bool deployParachute(bool isAuxiliaryChute = false)
+{
+    ignoreUnused(isAuxiliaryChute);
+    return {};
+}
 
 /*
  8)
  */
+void displayRGBColor(int red = 0, int green = 0, int blue = 0)
+{
+    ignoreUnused(red, green, blue);
+}
 
 /*
  9)
  */
+int roundToNearestInt(double valueToRound)
+{
+    ignoreUnused(valueToRound);
+    return {};
+}
 
 /*
  10)
  */
+char returnCharacter(int numberInAlphabet)
+{
+    ignoreUnused(numberInAlphabet);
+    return {};
+}
 
 /*
  MAKE SURE YOU ARE NOT ON THE MASTER BRANCH
@@ -132,27 +217,45 @@ int main()
     auto carRented = rentACar(6, 2); 
     
     //1)
+    auto sumOfThree = calculateSumOfThreeInts(1, 2, 999);
     
     //2)
-    
+    printCharacter('a');
+
     //3)
-    
+    auto audioEngine48kHz = initAudioEngine(48);
+
     //4)
-    
+    auto arrOfSize10 = returnArrayOfRandomNumbers(10);
+
     //5)
-    
+    auto gpaOfSomebody = returnSwissGradePointAverage(629, 4, 'E');
+
     //6)
-    
+    auto celsiusOf100Fahrenheit = convertFahrenheitToCelsius(100);
+
     //7)
-    
+    auto auxChuteDeploy = deployParachute(true);
+
     //8)
+    displayRGBColor(255, 255, 0);
     
     //9)
-    
+    auto mostLikelyNine = roundToNearestInt(9.391234);
+
     //10)
-    
+    auto aCharacter = returnCharacter(23);
     
     ignoreUnused(carRented);
+    ignoreUnused(sumOfThree);
+    ignoreUnused(audioEngine48kHz);
+    ignoreUnused(arrOfSize10);
+    ignoreUnused(gpaOfSomebody);
+    ignoreUnused(celsiusOf100Fahrenheit);
+    ignoreUnused(auxChuteDeploy);
+    ignoreUnused(mostLikelyNine);
+    ignoreUnused(aCharacter);
+    
     std::cout << "good to go!" << std::endl;
     return 0;    
 }
