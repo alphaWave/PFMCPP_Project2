@@ -78,26 +78,9 @@ void variableDeclarations()
     char firstLetter = 'A';
     char grade = 'C';
     char superHeroStartsWith = 'S';
-        
-    ignoreUnused(number); //passing each variable declared to the ignoreUnused() function
-    ignoreUnused(age);
-    ignoreUnused(count);
     
-    ignoreUnused(pi);
-    ignoreUnused(width);
-    ignoreUnused(speed);
-    
-    ignoreUnused(e);
-    ignoreUnused(weightOfFruit);
-    ignoreUnused(SPL);
-
-    ignoreUnused(hasAntennae);
-    ignoreUnused(isBlack);
-    ignoreUnused(isEmpty);
-
-    ignoreUnused(firstLetter);
-    ignoreUnused(grade);
-    ignoreUnused(superHeroStartsWith);
+    //passing each variable declared to the ignoreUnused() function
+    ignoreUnused(number, age, count, pi, width, speed, e, weightOfFruit, SPL, hasAntennae, isBlack, isEmpty, firstLetter, grade, superHeroStartsWith); 
 }
 
 /*
@@ -246,15 +229,7 @@ int main()
     //10)
     auto aCharacter = returnCharacter(23);
     
-    ignoreUnused(carRented);
-    ignoreUnused(sumOfThree);
-    ignoreUnused(audioEngine48kHz);
-    ignoreUnused(arrOfSize10);
-    ignoreUnused(gpaOfSomebody);
-    ignoreUnused(celsiusOf100Fahrenheit);
-    ignoreUnused(auxChuteDeploy);
-    ignoreUnused(mostLikelyNine);
-    ignoreUnused(aCharacter);
+    ignoreUnused(carRented, sumOfThree, audioEngine48kHz, arrOfSize10, gpaOfSomebody, celsiusOf100Fahrenheit, auxChuteDeploy, mostLikelyNine, aCharacter);
     
     std::cout << "good to go!" << std::endl;
     return 0;    
